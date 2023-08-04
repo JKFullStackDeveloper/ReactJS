@@ -4,19 +4,15 @@
   box-sizing: border-box;
 }
 .head-div{
-  height: 20rem;
-  width: 40rem;
-  background-color: bisque;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: auto;
-  margin-top: 10rem;
-  border: 2px dashed brown;
+  align-items:center;
+  justify-content:center;
+  margin-top: 2rem;
 }
 
 .first-h1{
+  margin-bottom: 1rem;
   color: brown;
 }
 .first-para{
@@ -46,4 +42,33 @@
     font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
+}
+.product-head{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+.products{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid mediumvioletred;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-image{
+  height: 100px;
+  width: 100px;
+  margin: .5rem;
+}
+h2{
+  text-align: center;
+  padding-bottom: 1rem;
 }
