@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
+import Counter from './Components/Counter';
 
-function App() {
+function App(props) {
   return(
     <div className='head-div'>
-    <h1 className='first-h1'>Welcome to ReactJS</h1>
-    <p className='first-para'>ReactJS is most useful and easy to develope frontEnd JavaScript Library</p>
+    <h1 className='first-h1'>Counter App</h1>
+    <Counter title="Value"/>
   </div>
   
   );
