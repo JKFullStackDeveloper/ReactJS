@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Cart(){
     
-    const [cartPproduct,setCartProduct] = useState([]);
+    const [cartProduct,setCartProduct] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
 
     const fetchData = async ()=>{
@@ -14,13 +14,13 @@ export default function Cart(){
 
     useEffect(()=>{
         fetchData();
-    },[cartPproduct])
-    
+    },[cartProduct])
+    console.log("i am render");
     return(
         <div className="product-main">
             {isLoading?<i class=" spinner fa-solid fa-spinner"><span>Loading...</span></i>:null}
             {
-                cartPproduct.map((product,index)=>(
+                cartProduct.map((product,index)=>(
                     <div key={index} className="product-details">
                         <div className="product-title">{product.title}</div>
                         <div className="product-desImgGrp">
