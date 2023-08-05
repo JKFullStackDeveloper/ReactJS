@@ -19,7 +19,6 @@ export default function Products(){
     return(
         <div>
            <h2>Product Details</h2>
-           
            {isLoading?"Loading....":null}
            <div className="product-head">
                 {
