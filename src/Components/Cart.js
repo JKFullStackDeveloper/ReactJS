@@ -15,7 +15,7 @@ export default function Cart(){
     useEffect(()=>{
         fetchData();
     },[cartProduct])
-    console.log("i am render");
+    
     return(
         <div className="product-main">
             {isLoading?<i class=" spinner fa-solid fa-spinner"><span>Loading...</span></i>:null}
