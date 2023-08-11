@@ -64,6 +64,7 @@
   margin-bottom: 1rem;
   padding: 1rem;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .product-image{
@@ -173,3 +174,22 @@ tr:hover{
   color: white;
 }
 
+.main-cat{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #b38989;
+  padding: 1rem;
+  border-bottom: 1px solid grey;
+  margin-bottom: 0.75rem;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  color: #14065b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.header:hover{
+  color: #f8f0f0;
+}
