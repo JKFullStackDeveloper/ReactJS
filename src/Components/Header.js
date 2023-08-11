@@ -1,36 +1,22 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import useApi from "../Hooks/useApi";
 
-export default function Header(){
+export default function Header() {
 
-    const [catagories, setCatagories] = useState([]);
-    const [isLoading,setIsLoading] = useState(true);
-    const [isError,setIsError]=useState(null);
+    const { data, isLoading, loadError } = useApi('https://fakestoreapi.com/products/categories');
 
-    const fetchCatagory = async ()=>{
-        try{
-            const res = await axios.get('https://fakestoreapi.com/products/categories');
-            setCatagories(res.data);
-            setIsLoading(false);
-        }catch(e){
-            setIsError(e);
-            setIsLoading(false);
-        }
+    if (isLoading) {
+        return <div>Data is loading...</div>
+    } else if (loadError) {
+        return <div>Load Error {loadError.message}</div>
+    } else {
+        return (
+            <div className="main-cat">
+                {data.map((catagory, index) => (
+                    <div className="header" key={index}>
+                        {catagory}
+                    </div>
+                ))}
+            </div>
+        );
     }
-
-    useEffect(()=>{
-        fetchCatagory();
-    },[catagories]);
-
-    return(
-        <>
-        <div className="main-cat">
-        {catagories.length>0?
-            catagories.map((catagory,index)=>(
-                <div className="header">{catagory}</div>
-            ))
-        :"Catagory not found"}
-        </div>
-        </>
-    )
-}
+} 
