@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import useApi from "../Hooks/useApi";
+import Category from "./Category";
 
-export default function Header() {
+export default function Header({setSelectedCategory}) {
 
     const { data, isLoading, loadError } = useApi('https://fakestoreapi.com/products/categories');
+
+    useEffect(()=>{
+        if(data){
+            setSelectedCategory(data);
+        }
+    },[data,setSelectedCategory]);
 
     if (isLoading) {
         return <div>Data is loading...</div>
@@ -11,10 +19,13 @@ export default function Header() {
     } else {
         return (
             <div className="main-cat">
-                {data.map((catagory, index) => (
-                    <div className="header" key={index}>
-                        {catagory}
-                    </div>
+                {data.map((category,i)=>(
+                
+                    <Category key={i}
+                    category={category}
+                    setSelectedCategory={setSelectedCategory} 
+                    />
+                     
                 ))}
             </div>
         );

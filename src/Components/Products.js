@@ -1,9 +1,8 @@
 import useApi from "../Hooks/useApi";
 
-export default function Products() {
+export default function Products({selectedCategory}) {
 
-    const categoryName = "jewelery";
-    const { data, isLoading, loadError } = useApi (`https://fakestoreapi.com/products/category/${categoryName}`);
+    const { data, isLoading, loadError } = useApi (`https://fakestoreapi.com/products/category/${selectedCategory}`);
      
     if (isLoading) {
         return (
