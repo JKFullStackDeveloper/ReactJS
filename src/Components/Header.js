@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import useApi from "../Hooks/useApi";
 import Category from "./Category";
+import { useCategoryContext } from "../Context/CategoryContext";
 
-export default function Header({setSelectedCategory}) {
-
+export default function Header() {
+    const { setSelectedCategory } = useCategoryContext();
     const { data, isLoading, loadError } = useApi('https://fakestoreapi.com/products/categories');
 
     useEffect(()=>{

@@ -1,8 +1,8 @@
-import useApi from "../Hooks/useApi";
+import { useProductContext } from "../Context/ProductContext";
 
-export default function Products({selectedCategory}) {
+export default function Products() {
 
-    const { data, isLoading, loadError } = useApi (`https://fakestoreapi.com/products/category/${selectedCategory}`);
+    const {data,isLoading,loadError} = useProductContext();
      
     if (isLoading) {
         return (
