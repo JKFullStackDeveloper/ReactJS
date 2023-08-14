@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import { useCartContext } from "../Context/CartContext";
 
 export default function AddtoCartButton({product}){
+    
     const {items,addItem,removeItem} = useCartContext();
 
     const incrementProduct = useCallback(()=>{
