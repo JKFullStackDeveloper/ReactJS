@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
-export default function useApi(URL, defaultVal = []){
+export default function useApi(URL, defaultVal=[]){
 
-    const [data,setData] = useState(defaultVal);
+    const [data,setData] = useState([defaultVal]);
     const [isLoading,setIsLoading] = useState(false);
     const [loadError,setLoadError] = useState(null);
 

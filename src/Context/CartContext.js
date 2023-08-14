@@ -1,0 +1,70 @@
+import { createContext, useCallback, useContext, useState } from "react";
+
+export const CartContext = createContext({
+    items : {},
+    total : 0,
+    addItem : (product)=>{},
+    removeItem : (product)=>{}
+});
+
+
+
+export default function CartContextProvider({ children }) {
+
+    const [items,setItems] = useState({});
+    const [total,setTotal] = useState(0);
+
+    const addItem = useCallback((product)=>{
+        const newItems = {...items};
+
+        if(newItems[product.id]){
+            newItems[product.id] = {
+                ...newItems[product.id],
+                quantity : newItems[product.id].quantity + 1 
+            }
+        }else{
+            newItems[product.id] ={
+                id : product.id,
+                title : product.title,
+                price : product.price,
+                quantity : 1
+            }
+        }
+
+        setItems(newItems);
+    },[items]) 
+
+    const removeItem = useCallback((product)=>{
+        
+        const newItems = {...items};
+
+        if(!newItems[product.id]) return;
+
+        if(newItems[product.id].quantity>1){
+            newItems[product.id] = {
+                ...newItems[product.id],
+                quantity : newItems[product.id].quantity - 1 
+            }
+        }else{
+            delete newItems[product.id];
+        }
+        setItems(newItems);
+    },[items]) 
+
+    return (
+ 
+        <CartContext.Provider
+            value={{
+                items,
+                total,
+                addItem,
+                removeItem
+            }}
+        >
+
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+export const useCartContext = () => useContext(CartContext);

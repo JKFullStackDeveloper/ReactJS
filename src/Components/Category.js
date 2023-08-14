@@ -1,8 +1,15 @@
 import React from "react";
+import { useCategoryContext } from "../Context/CategoryContext";
 
-export default function Category({setSelectedCategory,category}) {
+export default function Category({category}) {
+
+    const {setSelectedCategory} = useCategoryContext();
+    const handleClick = ()=> {
+        setSelectedCategory(category);
+    }
+
     return (    
-        <div onClick={() => { setSelectedCategory(category)}} className="header">
+        <div onClick={handleClick} className="header">
             {category}
         </div>
     );

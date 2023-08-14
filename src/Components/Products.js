@@ -1,4 +1,5 @@
 import { useProductContext } from "../Context/ProductContext";
+import ProductCard from "./ProductCard";
 
 export default function Products() {
 
@@ -17,11 +18,7 @@ export default function Products() {
                 <div className="product-head">
                     {
                         data.map((product, index) => (
-                            <div className="products" key={index}>
-                                {product.title}
-                                <img loading="lazy" className="product-image" alt="product" src={product.image}></img>
-                                Price: {product.price} USD
-                            </div>
+                            <ProductCard key={index} product={product}/>
                         ))
                     }
                 </div>

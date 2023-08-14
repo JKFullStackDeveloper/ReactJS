@@ -23,8 +23,7 @@ export default function Header() {
                 {data.map((category,i)=>(
                 
                     <Category key={i}
-                    category={category}
-                    setSelectedCategory={setSelectedCategory} 
+                    category={category} 
                     />
                      
                 ))}

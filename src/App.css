@@ -52,7 +52,7 @@
   justify-content: space-around;
   margin-top: 1rem;
   margin-left: 1rem;
-  gap: 1rem;
+  gap: 2rem;
 }
 .products{
   width: 300px;
@@ -60,17 +60,59 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid mediumvioletred;
+  border-radius: 10px;
   margin-bottom: 1rem;
   padding: 1rem;
   flex-wrap: wrap;
-  cursor: pointer;
+  box-shadow: 5px 3px 10px 5px #46494687;
 }
 
 .product-image{
   height: 100px;
   width: 100px;
   margin: .5rem;
+  cursor: pointer;
+  transition: .25s linear;
+}
+
+.product-image:hover{
+  width: 125px;
+  height: 125px;
+}
+
+.product-footer{
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 2px dotted #232f3e;
+  padding-top: .5rem;
+}
+
+.product-footer button{
+  padding: .5rem;
+  cursor: pointer;
+  background-color: #232f3e;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  width: 45%;
+  transition: .5s;
+}
+.product-footer button:hover{
+  background-color: #bebeeb;
+  color: black;
+}
+.product-counter{
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  width: 45%;
+}
+.product-count-lable{
+  padding: .5rem;
 }
 h2{
   text-align: center;
@@ -179,17 +221,23 @@ tr:hover{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #b38989;
+  background-color: #232f3e;
   padding: 1rem;
   border-bottom: 1px solid grey;
   margin-bottom: 0.75rem;
   text-transform: capitalize;
   font-size: 1.25rem;
-  color: #14065b;
+  color: whitesmoke;
   font-weight: 700;
   cursor: pointer;
 }
 
+.header{
+  transition: .25s linear;
+}
 .header:hover{
-  color: #f8f0f0;
+  color: #232f3e;
+  background-color: whitesmoke;
+  border-radius: 10%;
+  padding: .5rem;
 }

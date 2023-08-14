@@ -4,10 +4,12 @@ import Products from './Components/Products';
 import Header from './Components/Header';
 import CategoryProvider from './Context/CategoryContext';
 import ProductContextProvider from './Context/ProductContext';
+import CartContextProvider from './Context/CartContext';
 
 function App() {
 
   return(
+    <CartContextProvider>
     <CategoryProvider>
       <div className='head-div'>
         <Header />
@@ -16,6 +18,7 @@ function App() {
         </ProductContextProvider>
       </div>
     </CategoryProvider>
+    </CartContextProvider>
   );
 }
 
