@@ -7,10 +7,10 @@ export default function Category({category}) {
     const handleClick = ()=> {
         setSelectedCategory(category);
     }
-
-    return (    
-        <div onClick={handleClick} className="header">
-            {category}
-        </div>
-    );
+    
+        return (  
+            <div onClick={handleClick} className="header">
+                {category}
+            </div>
+        );
 }

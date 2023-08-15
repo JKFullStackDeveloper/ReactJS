@@ -4,13 +4,15 @@ export const CartContext = createContext({
     items : {},
     total : 0,
     addItem : (product)=>{},
-    removeItem : (product)=>{}
+    removeItem : (product)=>{},
+    cartOpen: false
 });
 
 
 
 export default function CartContextProvider({ children }) {
 
+    const [cartOpen,setCartOpen] = useState(false);
     const [items,setItems] = useState({});
     const [total,setTotal] = useState(0);
 
@@ -58,7 +60,9 @@ export default function CartContextProvider({ children }) {
                 items,
                 total,
                 addItem,
-                removeItem
+                removeItem,
+                cartOpen,
+                setCartOpen
             }}
         >
 

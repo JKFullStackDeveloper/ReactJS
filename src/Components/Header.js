@@ -2,11 +2,21 @@ import { useEffect } from "react";
 import useApi from "../Hooks/useApi";
 import Category from "./Category";
 import { useCategoryContext } from "../Context/CategoryContext";
+import Cart from "./Cart";
+import { useCartContext } from "../Context/CartContext";
 
 export default function Header() {
+    const {cartOpen,setCartOpen} =useCartContext();
     const { setSelectedCategory } = useCategoryContext();
     const { data, isLoading, loadError } = useApi('https://fakestoreapi.com/products/categories');
 
+    const openCloseCart = ()=>{
+        if(cartOpen){
+            setCartOpen(false)
+        }else{
+            setCartOpen(true)
+        }
+    }
     useEffect(()=>{
         if(data){
             setSelectedCategory(data);
@@ -21,12 +31,11 @@ export default function Header() {
         return (
             <div className="main-cat">
                 {data.map((category,i)=>(
-                
                     <Category key={i}
                     category={category} 
                     />
-                     
                 ))}
+            <button onClick={openCloseCart} className="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button>
             </div>
         );
     }

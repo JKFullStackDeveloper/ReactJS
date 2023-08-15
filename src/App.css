@@ -53,6 +53,7 @@
   margin-top: 1rem;
   margin-left: 1rem;
   gap: 2rem;
+  width: 75%;
 }
 .products{
   width: 300px;
@@ -240,4 +241,54 @@ tr:hover{
   background-color: whitesmoke;
   border-radius: 10%;
   padding: .5rem;
+}
+
+.main-cat button{
+  padding: .5rem;
+  cursor: pointer;
+  background-color: #232f3e;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  transition: .25s linear;
+}
+
+.main-cat button:hover{
+  color: #232f3e;
+  background-color: whitesmoke;
+  border-radius: 10%;
+  padding: .5rem;
+}
+.main-cat button i{
+  font-size: 1.5rem;
+}
+
+.cart-list{
+  position: fixed;
+  top: 4.55rem;
+  right: 0;
+  width: 25%;
+  height: 100%;
+  border: 1px solid #bab2b2;
+  padding: 1rem;
+}
+.cart-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  margin: -1rem 0 1rem -1rem;
+  padding: 1rem;
+  width: 109.2%;
+  background-color: #808080a3;
+}
+.cart-head button{
+  padding: .2rem;
+  width: 1.5rem;
+  background-color: red;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
 }

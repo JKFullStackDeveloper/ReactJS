@@ -26,7 +26,7 @@ export default function Products() {
         )
     } else {
         return (
-            <h3>Product not found</h3>
+            <h>Product not found</h>
         )
     }
 }
