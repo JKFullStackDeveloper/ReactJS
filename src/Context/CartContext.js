@@ -29,12 +29,14 @@ export default function CartContextProvider({ children }) {
                 id : product.id,
                 title : product.title,
                 price : product.price,
+                image : product.image,
                 quantity : 1
             }
         }
 
         setItems(newItems);
-    },[items]) 
+        setTotal(total+ product.price);
+    },[items,total]) 
 
     const removeItem = useCallback((product)=>{
         
@@ -51,7 +53,8 @@ export default function CartContextProvider({ children }) {
             delete newItems[product.id];
         }
         setItems(newItems);
-    },[items]) 
+        setTotal(total - product.price);
+    },[items,total]) 
 
     return (
  
