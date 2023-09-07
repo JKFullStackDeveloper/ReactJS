@@ -7,8 +7,11 @@ export const ProductContext = createContext();
 export default function ProductContextProvider({ children }) {
 
     const { selectedCategory } = useCategoryContext();
-     
-        const { data, isLoading, loadError } = useApi(`https://fakestoreapi.com/products/category/${selectedCategory}`);
+    const URL =
+    selectedCategory !== "All Category"
+      ? `https://fakestoreapi.com/products/category/${selectedCategory}`
+      : `https://fakestoreapi.com/products`;
+    const { data, isLoading, loadError } = useApi(URL);
 
     return (
         <ProductContext.Provider

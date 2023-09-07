@@ -22,7 +22,7 @@ export default function Cart(){
                  }   
                 </div>
                 <div className="cartlist-footer">
-                <h3>Total Cart Value : ${Math.round(total)} .00</h3>
+                <h3>Total Cart Value : ${(total).toFixed(2)}</h3>
                 </div>
                 <div className="cart-checkout">
                     <button className="checkout-btn">Checkout</button>

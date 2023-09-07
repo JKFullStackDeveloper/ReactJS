@@ -4,7 +4,7 @@ export const CategoryContext = createContext();
 
 export default function CategoryProvider({children}){
 
-    const [selectedCategory,setSelectedCategory] = useState(null)
+    const [selectedCategory,setSelectedCategory] = useState("All Category")
 
     return(
         <CategoryContext.Provider

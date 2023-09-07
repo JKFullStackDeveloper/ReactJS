@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 
-export default function useApi(URL, defaultVal=[]){
+export default function useApi(URL,defaultData = []){
 
-    const [data,setData] = useState([defaultVal]);
+    const [data,setData] = useState(defaultData);
     const [isLoading,setIsLoading] = useState(false);
-    const [loadError,setLoadError] = useState(null);
+    const [loadError,setLoadError] = useState(false);
 
     const fetchData = useCallback(async ()=>{
         setIsLoading(true);

@@ -14,7 +14,7 @@ function CartList({ product }) {
             </div>
             <div className="cart-item-price">
               <h4>  Price : ${product.price} </h4>
-              <h4>Total : $ {Math.round(product.price * product.quantity)}.00 </h4>
+              <h4>Total : $ {(product.price * product.quantity).toFixed(2)} </h4>
             </div>
             <AddtoCartButton product={product} />
         </div>
